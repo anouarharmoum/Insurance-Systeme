@@ -19,9 +19,8 @@ return new class extends Migration
             $table->decimal('avance', 8, 2);
             $table->decimal('rest', 8, 2);
             $table->datetime('cree_on');
-           $table->string('duree');
-        //    $table->string('duration_unit')->nullable();
-           $table->datetime('ended_at');
+            $table->string('duree');
+            $table->datetime('ended_at');
             $table->string('Observation');
             $table->timestamps();
         });
@@ -36,3 +35,5 @@ return new class extends Migration
        
     }
 };
+
+   //    $table->string('duration_unit')->nullable();

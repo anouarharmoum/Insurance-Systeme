@@ -21,6 +21,9 @@ class ClientController extends Controller
     public function index()
     {
         $query = Client::query();
+
+        $sortField =request("sort_field" ,'created_at');
+        $sortDirection = request("sort_direction","desc");
         if (request("assure")) {
             $query->where("assure", "like", "%" . request("assure") . "%");
         }
@@ -30,7 +33,7 @@ class ClientController extends Controller
 
 
 
-        $clients = $query
+        $clients = $query->orderBy($sortField,$sortDirection)
             ->paginate(10)
             ->onEachSide(1);
 
@@ -82,7 +85,7 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         return inertia('Client/Edit', [
-            'client' => $client,
+            'client' => new ClientResource($client),
         ]);
         
     }

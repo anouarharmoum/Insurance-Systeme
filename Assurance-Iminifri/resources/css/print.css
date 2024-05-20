@@ -2,12 +2,13 @@
     body * {
         visibility: hidden;
     }
-    #printableArea, #printableArea * {
+    .printable-table, .printable-table * {
         visibility: visible;
     }
-    #printableArea {
+    .printable-table {
         position: absolute;
         left: 0;
         top: 0;
+        width: 100%;
     }
 }

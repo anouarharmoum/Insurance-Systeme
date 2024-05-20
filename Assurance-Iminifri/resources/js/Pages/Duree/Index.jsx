@@ -3,6 +3,7 @@ import TextInput from "@/Components/TextInput";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, router } from "@inertiajs/react";
 import { useState, useEffect } from "react";
+import "../../../css/print.css"
 
 export default function Index({ auth, durees, queryParams = null }) {
     queryParams = queryParams || {};
@@ -23,6 +24,9 @@ export default function Index({ auth, durees, queryParams = null }) {
     const onKeyPress = (assure, e) => {
         if (e.key !== "Enter") return;
         searchFieldChange(assure, e.target.value);
+    };
+    const printTable = () => {
+        window.print();
     };
 
     const handleSubmit = (e) => {
@@ -51,14 +55,14 @@ export default function Index({ auth, durees, queryParams = null }) {
             user={auth.user}
             header={
                 <div className="flex justify-between items-center">
-                    <h2 className="font-semibold text-xl text-gray-800 leading-tight">
+                    <h2 className="font-semibold text-xl text-customBlue leading-tight">
                         Durees
                     </h2>
                     <div className=" ">
                         <Link
-                            className="bg-gray-500 py-1 px-3 text-white
+                            className="bg-customBlue py-1 px-3 text-white
                  rounded shadow transition-all hover:bg bg-gray-600 mx-3 "
-                            onClick={() => window.print()}
+                            onClick={printTable}
                         >
                             Print
                         </Link>
@@ -97,30 +101,20 @@ export default function Index({ auth, durees, queryParams = null }) {
                 </div>
 
                 <div className="max-w-7xl mx-auto sm:px-6 lg:px-8">
+                {Object.keys(queryParams).length > 0 && (
+                        <div className="-mt-6 mb-5 mr-2 text-right">
+                            <Link href={route("duree.index")}>
+                                <i className="fa-sharp fa-solid fa-arrow-right-long fa-beat customBlue" />
+                                <span className="ml-2">Back</span>
+                            </Link>
+                        </div>
+                    )}
                     <div className="bg-white overflow-hidden shadow-sm sm:rounded-lg">
-                        {Object.keys(queryParams).length > 0 && (
-                            <div className="mt-3 mr-2 text-right">
-                                <a
-                                    className="group relative inline-block focus:outline-none focus:ring"
-                                    href="#"
-                                >
-                                    <span className="absolute inset-0 translate-x-0 translate-y-0 bg-yellow-300 transition-transform group-hover:translate-x-1.5 group-hover:translate-y-1.5"></span>
-
-                                    <span
-                                        className="relative inline-block border-2 border-current px-8 py-2 text-sm font-bold uppercase tracking-widest"
-                                        onClick={() =>
-                                            router.get(route("duree.index"))
-                                        }
-                                    >
-                                        Return
-                                    </span>
-                                </a>
-                            </div>
-                        )}
+                        
                         <div className="p-6 text-gray-900">
                         <div className="overflow-auto">
-                            <table className="w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
-                                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                            <table className=" printable-table w-full text-sm text-left rtl:text-right text-gray-500 dark:text-gray-400">
+                                <thead className="text-xs text-gray-100 uppercase bg-customGray  dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
                                     <tr className="text-nowrap">
                                         <th className="px-3 py-2">ID</th>
                                         <th className="px-3 py-2">
@@ -134,7 +128,7 @@ export default function Index({ auth, durees, queryParams = null }) {
                                         <th className="px-3 py-2">Ended at</th>
                                     </tr>
                                 </thead>
-                                <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
+                                <thead className="text-xs text-gray-700 uppercase bg-customGray2 dark:bg-gray-700 dark:text-gray-400 border-b-2 border-gray-500">
                                     <tr className="text-nowrap">
                                         <th className="px-3 py-2"></th>
                                         <th className="px-3 py-2"></th>
