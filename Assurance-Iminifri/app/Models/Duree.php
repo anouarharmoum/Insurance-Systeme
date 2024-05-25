@@ -8,6 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Duree extends Model
 {
     use HasFactory;
+    protected $fillable = ['client_id'];
 
     public function client(){
 

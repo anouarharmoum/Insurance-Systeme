@@ -1,3 +1,4 @@
+import Footer from "@/Components/Footer";
 import Pagination from "@/Components/Pagination";
 import SelectInput from "@/Components/SelectInput";
 import TextInput from "@/Components/TextInput";
@@ -30,7 +31,7 @@ export default function Index({ auth, status, queryParams = null }) {
             header={
                 <div className="flex justify-between items-center">
                     <h2 className="font-semibold text-xl text-customBlue leading-tight">
-                        status
+                        Status
                     </h2>
                 </div>
             }
@@ -172,6 +173,7 @@ export default function Index({ auth, status, queryParams = null }) {
                     </div>
                 </div>
             </div>
+            <Footer/>
         </Authenticated>
     );
 }

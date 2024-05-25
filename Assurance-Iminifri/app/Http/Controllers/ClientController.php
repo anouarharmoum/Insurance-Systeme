@@ -85,7 +85,7 @@ class ClientController extends Controller
     public function edit(Client $client)
     {
         return inertia('Client/Edit', [
-            'client' => new ClientResource($client),
+            'client' => $client,
         ]);
         
     }

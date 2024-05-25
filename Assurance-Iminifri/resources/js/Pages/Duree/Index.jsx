@@ -4,6 +4,7 @@ import Authenticated from "@/Layouts/AuthenticatedLayout";
 import { Head, Link, router } from "@inertiajs/react";
 import { useState, useEffect } from "react";
 import "../../../css/print.css"
+import Footer from "@/Components/Footer";
 
 export default function Index({ auth, durees, queryParams = null }) {
     queryParams = queryParams || {};
@@ -61,7 +62,7 @@ export default function Index({ auth, durees, queryParams = null }) {
                     <div className=" ">
                         <Link
                             className="bg-customBlue py-1 px-3 text-white
-                 rounded shadow transition-all hover:bg bg-gray-600 mx-3 "
+                 rounded shadow  mx-3 "
                             onClick={printTable}
                         >
                             Print
@@ -186,7 +187,7 @@ export default function Index({ auth, durees, queryParams = null }) {
                     </div>
                 </div>
             </div>
-            
+            <Footer/>
         </Authenticated>
     );
 }
