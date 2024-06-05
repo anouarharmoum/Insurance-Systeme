@@ -37,8 +37,6 @@ Route::middleware(['auth', 'verified'])->group(function () {
     // Route::get('/note/{id}', [NoteController::class,'show'])->name('note.show');
 
     // Route::delete('/note/{id}', [NoteController::class,'destroy'])->name('note.destroy');
-
-
     Route::resource('client', ClientController::class);
     Route::resource('status', StatusController::class);
     Route::resource('duree', DureeController::class);

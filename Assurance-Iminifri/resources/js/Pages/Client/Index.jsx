@@ -3,22 +3,19 @@ import SelectInput from "@/Components/SelectInput";
 import TextInput from "@/Components/TextInput";
 import Authenticated from "@/Layouts/AuthenticatedLayout";
 import "../../../css/fontAwesome/css/all.min.css";
-import { ChevronUpIcon,ChevronDownIcon } from '@heroicons/react/16/solid'
-
-function MyComponent() {
-  return (
-    <div>
-      <BeakerIcon className="size-6 text-blue-500" />
-      <p>...</p>
-    </div>
-  )
-}
-import {
-    client_OBSERVATION_CLASS_MAP,
-    client_OBSERVATION_TEXT_MAP,
-} from "@/constants";
+import { ChevronUpIcon, ChevronDownIcon } from "@heroicons/react/16/solid";
+import {client_OBSERVATION_CLASS_MAP,client_OBSERVATION_TEXT_MAP} from "@/constants";
 import { Head, Link, router } from "@inertiajs/react";
 import Footer from "@/Components/Footer";
+
+function MyComponent() {
+    return (
+        <div>
+            <BeakerIcon className="size-6 text-blue-500" />
+            <p>...</p>
+        </div>
+    );
+}
 
 export default function Index({ auth, clients, queryParams = null, success }) {
     queryParams = queryParams || {};
@@ -107,19 +104,31 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 className="px-3 py-2"
                                             >
                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                ID
-                                                <div>
-                                                    <ChevronUpIcon className={
-                                                        "w-4" +(queryParams.sort_field ==="id" && 
-                                                        queryParams.sort_direction === "asc" ? "text-black" : "")
-                                                    }/>
-                                                    <ChevronDownIcon className={
-                                                        "w-4" +(queryParams.sort_field==="id" && 
-                                                        queryParams.sort_direction==="desc" ? "text-black" : "")
-                                                    }/>
-
-                                                </div>
-
+                                                    ID
+                                                    <div>
+                                                        <ChevronUpIcon
+                                                            className={
+                                                                "w-4" +
+                                                                (queryParams.sort_field ===
+                                                                    "id" &&
+                                                                queryParams.sort_direction ===
+                                                                    "asc"
+                                                                    ? "text-black"
+                                                                    : "")
+                                                            }
+                                                        />
+                                                        <ChevronDownIcon
+                                                            className={
+                                                                "w-4" +
+                                                                (queryParams.sort_field ===
+                                                                    "id" &&
+                                                                queryParams.sort_direction ===
+                                                                    "desc"
+                                                                    ? "text-black"
+                                                                    : "")
+                                                            }
+                                                        />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -128,14 +137,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-3 py-2"
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Num Dossier
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Num Dossier
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -144,14 +151,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-3 py-2"
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Assure
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Assure
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -160,14 +165,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-3 py-2"
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Prime
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Prime
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -176,14 +179,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-3 py-2"
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Avance
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Avance
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -192,14 +193,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-3 py-2 "
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Rest
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Rest
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -208,14 +207,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-5 py-2 "
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Created at
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Created at
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -224,14 +221,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-3 py-2"
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Duree
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Duree
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th
@@ -240,14 +235,12 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                                 }
                                                 className="px-6 py-2"
                                             >
-                                                 <div className="flex items-center justify-between gap-1 cursor-pointer">
-                                                Ended at
-                                                <div>
-                                                    <ChevronUpIcon className="w-4"/>
-                                                    <ChevronDownIcon className="w-4"/>
-
-                                                </div>
-
+                                                <div className="flex items-center justify-between gap-1 cursor-pointer">
+                                                    Ended at
+                                                    <div>
+                                                        <ChevronUpIcon className="w-4" />
+                                                        <ChevronDownIcon className="w-4" />
+                                                    </div>
                                                 </div>
                                             </th>
                                             <th className="px-3 py-2">
@@ -387,15 +380,11 @@ export default function Index({ auth, clients, queryParams = null, success }) {
                                 </table>
                             </div>
                             <Pagination links={clients.meta.links} />
-                            
                         </div>
-                     
                     </div>
-              
                 </div>
-                
             </div>
-            <Footer/>
+            <Footer />
         </Authenticated>
     );
 }

@@ -87,7 +87,7 @@ export default function Dashboard({ auth, totalClients, totalAvance, totalComple
                                     <i className="fa-solid fa-users"></i>
                                 </div>
                                 <div className="ml-4">
-                                    <h5 className="text-lg font-semibold">Total Resperer Insurance</h5>
+                                    <h5 className="text-lg font-semibold">Total Assurance Expirée</h5>
                                     <p className="text-2xl font-bold">{totalRespererInsurance}</p>
                                 </div>
                             </div>

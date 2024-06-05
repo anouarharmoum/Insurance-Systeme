@@ -40,7 +40,7 @@ export default function Authenticated({ user, header, children }) {
                             </div>
                             <div className="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
                                 <NavLink href={route('duree.index')} active={route().current('duree.index')}>
-                                    Resperer insurance
+                                    Assurance Expirée
                                 </NavLink>
                             </div>
                         </div>
